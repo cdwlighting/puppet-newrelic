@@ -83,7 +83,7 @@ class newrelic::agent::php (
   package { $newrelic_php_package:
     ensure  => $newrelic_php_package_ensure,
     require => Class['newrelic::params'],
-    notify => Package[$newrelic_php_service],
+    notify => Service[$newrelic_php_service],
   }
 
   service { $newrelic_php_service:
